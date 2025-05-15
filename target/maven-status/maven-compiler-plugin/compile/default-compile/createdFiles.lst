@@ -1,0 +1,6 @@
+com/example/utils/TokenManager.class
+com/example/pojo/Login.class
+com/example/utils/JsonUtils.class
+com/example/utils/RequestUtils.class
+com/example/utils/GetProperties.class
+com/example/utils/RestAssuredUtils.class

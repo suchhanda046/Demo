@@ -1,0 +1,9 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="DemoTestSuite">
+    <test name="DemoTest">
+        <classes>
+            <class name="com.example.runners.TestRunner"/>
+        </classes>
+    </test>
+</suite>
+
