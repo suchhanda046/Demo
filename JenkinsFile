@@ -47,7 +47,7 @@ pipeline {
                     def cmd = "${env.MAVEN_CMD} test"
 
                     if (params.FEATURE?.trim()) {
-                        cmd += " -Dcucumber.features=src/test/resources/features/${params.FEATURE.trim()}"
+                        cmd += " -Dcucumber.features=src/test/resources/${params.FEATURE.trim()}"
                     }
 
                     if (params.TAG?.trim()) {
