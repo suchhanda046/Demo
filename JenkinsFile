@@ -1,6 +1,10 @@
 pipeline {
     agent any
 
+    tools {
+        maven 'Maven-3.9.9'  // Use your configured Maven tool name here
+    }
+
     parameters {
         // Dropdown for selecting Git branch (requires Git Parameter Plugin)
         gitParameter(name: 'BRANCH',
@@ -22,7 +26,8 @@ pipeline {
     }
 
     environment {
-        MAVEN_CMD = 'mvn'
+        // Use the Maven executable provided by Jenkins tools, no need to hardcode 'mvn'
+        MAVEN_CMD = "${tool 'Maven-3.9.9'}/bin/mvn"
     }
 
     stages {
@@ -58,7 +63,6 @@ pipeline {
 
     post {
         always {
-            // Archive Cucumber HTML/JSON reports (adjust path as per your setup)
             archiveArtifacts artifacts: 'target/cucumber-reports/**/*', allowEmptyArchive: true
         }
     }
